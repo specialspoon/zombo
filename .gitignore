@@ -1,5 +1,7 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
+# b r u h . Which one of you forgot to ignore .DS_Store 🤨💀
+.DS_Store
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 /[Ll]ibrary/
