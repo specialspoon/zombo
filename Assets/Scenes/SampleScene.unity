@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 1622901771}
   - component: {fileID: 1622901770}
   m_Layer: 0
-  m_Name: PathfindingArea
+  m_Name: Pathfinding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
