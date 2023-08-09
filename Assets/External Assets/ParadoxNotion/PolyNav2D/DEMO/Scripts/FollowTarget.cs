@@ -5,7 +5,8 @@ using System.Collections.Generic;
 [RequireComponent(typeof(PolyNavAgent))]
 public class FollowTarget : MonoBehaviour{
 
-	public Transform target; 
+	public Transform target;
+	public Rigidbody2D rb;
 	
 	private PolyNavAgent _agent;
 	private PolyNavAgent agent{
@@ -15,6 +16,9 @@ public class FollowTarget : MonoBehaviour{
 	void Update() {
 		if (target != null){
 			agent.SetDestination( target.position );
+			Vector2 lookDir = new Vector2(target.position.x, target.position.y) - rb.position;
+			float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+			rb.MoveRotation(angle);
 		}
 	}
 }
