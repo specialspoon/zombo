@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float turnSmoothing = 30f;
 
     public Rigidbody2D rb;
     public Camera cam;
@@ -30,3 +31,4 @@ public class PlayerMovement : MonoBehaviour
         rb.MoveRotation(angle);
     }
 }
+ 
