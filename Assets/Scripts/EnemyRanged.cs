@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyRanged : MonoBehaviour
 {
     public float health = 50;
+    public float damage = 10;
     public float fireSpeed;
     public float range;
 
@@ -53,6 +54,9 @@ public class EnemyRanged : MonoBehaviour
             canShoot = false;
             GameObject bullet;
             bullet = Instantiate(bulletPrefab, new Vector3(firePoint.position.x, firePoint.position.y, 0), Quaternion.identity);
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            bulletScript.bulletDamage = 10f;
+            Destroy(bullet, 5f);
             Rigidbody2D rb;
             rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(direction.x * fireSpeed, direction.y * fireSpeed), ForceMode2D.Impulse);
