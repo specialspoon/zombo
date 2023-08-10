@@ -8,10 +8,14 @@ public class PlayerShooting : MonoBehaviour
 	public GameObject bulletPrefab;
 
 	public float bulletForce = 20f;
+	public float fireRate = 0.5f;
+
+	public bool canShoot = true;
+
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButton("Fire1"))
 		{
 			Shoot();
 		}
@@ -19,12 +23,21 @@ public class PlayerShooting : MonoBehaviour
 
 	void Shoot()
 	{
-
-		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-		Bullet bulletScript = bullet.GetComponent<Bullet>();
-		bulletScript.bulletDamage = 10f;
-		Destroy(bullet, 5f);
-		Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-		rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+		if (canShoot == true)
+        {
+			canShoot = false;
+			GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+			Bullet bulletScript = bullet.GetComponent<Bullet>();
+			bulletScript.bulletDamage = 10f;
+			Destroy(bullet, 5f);
+			Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+			rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+			Invoke("Reload", fireRate);
+		}
 	}
+
+	void Reload()
+    {
+		canShoot = true;
+    }
 }
