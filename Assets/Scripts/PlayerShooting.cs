@@ -6,6 +6,10 @@ public class PlayerShooting : MonoBehaviour
 {
 	public Transform firePoint;
 	public GameObject bulletPrefab;
+	public Camera cam;
+	public Rigidbody2D rb;
+
+	Vector2 mousePos;
 
 	public float bulletForce = 20f;
 	public float fireRate = 0.5f;
@@ -19,6 +23,12 @@ public class PlayerShooting : MonoBehaviour
 		{
 			Shoot();
 		}
+
+
+		mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+		Vector2 lookDir = mousePos - rb.position;
+		float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+		rb.MoveRotation(angle);
 	}
 
 	void Shoot()
