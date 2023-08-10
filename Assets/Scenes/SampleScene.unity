@@ -10274,6 +10274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1655148478}
+  isStopped: 0
 --- !u!114 &916061823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10455,12 +10456,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  fireSpeed: 10
+  fireSpeed: 5
+  range: 10
   player: {fileID: 1655148478}
   bulletPrefab: {fileID: 456813857}
   firePoint: {fileID: 765347613}
   rb: {fileID: 916061824}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  followTarget: {fileID: 916061822}
   canShoot: 0
+  canSeePlayer: 0
 --- !u!1 &927356174
 GameObject:
   m_ObjectHideFlags: 0
@@ -10473,7 +10483,7 @@ GameObject:
   - component: {fileID: 927356177}
   - component: {fileID: 927356176}
   - component: {fileID: 927356175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10673,6 +10683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1655148478}
+  isStopped: 0
 --- !u!114 &1233346555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10849,7 +10860,7 @@ Transform:
   m_GameObject: {fileID: 1233346553}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.65, y: 1.61, z: 0}
+  m_LocalPosition: {x: -8.42, y: 3.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10867,7 +10878,7 @@ GameObject:
   - component: {fileID: 1464174077}
   - component: {fileID: 1464174076}
   - component: {fileID: 1464174075}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11218,6 +11229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1655148478}
+  isStopped: 0
 --- !u!1 &1513731981
 GameObject:
   m_ObjectHideFlags: 0
@@ -16118,7 +16130,7 @@ GameObject:
   - component: {fileID: 1655148475}
   - component: {fileID: 1655148479}
   - component: {fileID: 1655148480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16307,7 +16319,7 @@ GameObject:
   - component: {fileID: 1736761408}
   - component: {fileID: 1736761407}
   - component: {fileID: 1736761406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

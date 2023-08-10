@@ -5,7 +5,9 @@ using System.Collections.Generic;
 [RequireComponent(typeof(PolyNavAgent))]
 public class FollowTarget : MonoBehaviour{
 
-	public Transform target; 
+	public Transform target;
+
+	public bool isStopped;
 	
 	private PolyNavAgent _agent;
 	private PolyNavAgent agent{
@@ -13,8 +15,14 @@ public class FollowTarget : MonoBehaviour{
 	}
 
 	void Update() {
-		if (target != null){
+		if (target != null && isStopped == false){
 			agent.SetDestination( target.position );
 		}
+
+		else
+        {
+			agent.SetDestination(transform.position);
+		}
 	}
+
 }
