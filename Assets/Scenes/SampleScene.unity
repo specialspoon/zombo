@@ -632,7 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 1924030349}
   maxSpeed: 2.5
-  mass: 1
+  mass: 2
   stoppingDistance: 0
   slowingDistance: 1
   accelerationRate: 2
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 1924030349}
   maxSpeed: 2.5
-  mass: 1
+  mass: 2
   stoppingDistance: 0
   slowingDistance: 1
   accelerationRate: 2
