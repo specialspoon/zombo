@@ -633,8 +633,8 @@ MonoBehaviour:
   _map: {fileID: 1924030349}
   maxSpeed: 2.5
   mass: 2
-  stoppingDistance: 0
-  slowingDistance: 1
+  stoppingDistance: 1
+  slowingDistance: 2
   accelerationRate: 2
   decelerationRate: 2
   lookAheadDistance: 1
@@ -1043,8 +1043,8 @@ MonoBehaviour:
   _map: {fileID: 1924030349}
   maxSpeed: 1.5
   mass: 4
-  stoppingDistance: 0
-  slowingDistance: 1
+  stoppingDistance: 1
+  slowingDistance: 2
   accelerationRate: 2
   decelerationRate: 2
   lookAheadDistance: 1
@@ -1549,8 +1549,8 @@ MonoBehaviour:
   _map: {fileID: 1924030349}
   maxSpeed: 2.5
   mass: 2
-  stoppingDistance: 0
-  slowingDistance: 1
+  stoppingDistance: 1
+  slowingDistance: 2
   accelerationRate: 2
   decelerationRate: 2
   lookAheadDistance: 1
@@ -1627,8 +1627,8 @@ MonoBehaviour:
   _map: {fileID: 1924030349}
   maxSpeed: 3.5
   mass: 1.5
-  stoppingDistance: 0
-  slowingDistance: 1
+  stoppingDistance: 1
+  slowingDistance: 2
   accelerationRate: 2
   decelerationRate: 2
   lookAheadDistance: 1
@@ -1830,6 +1830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  turnSmoothing: 30
   rb: {fileID: 1655148476}
   cam: {fileID: 519420031}
 --- !u!50 &1655148476
@@ -1855,7 +1856,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
@@ -1942,7 +1943,7 @@ MonoBehaviour:
   firePoint: {fileID: 950040458}
   bulletPrefab: {fileID: 456813857}
   bulletForce: 4
-  fireRate: 0.5
+  fireRate: 0.2
   canShoot: 1
 --- !u!61 &1655148480
 BoxCollider2D:
