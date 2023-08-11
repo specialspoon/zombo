@@ -9,7 +9,13 @@ public class Enemy : MonoBehaviour
 
     public Transform player;
     public Rigidbody2D rb;
+    public Animator animator;
     
+    void Start()
+    {
+        //animator = getComponent<Animator>();
+    }
+
     void Update()
     {
         if (health <= 0f)
@@ -17,9 +23,10 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Vector2 lookDir = player.position - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.MoveRotation(angle);
+
+        //Vector2 lookDir = player.position - transform.position;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        //rb.MoveRotation(angle);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
