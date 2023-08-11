@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -19,7 +20,12 @@ public class PlayerShooting : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButton("Fire1"))
+        var keys = Keyboard.current;
+        var mouse = Mouse.current;
+        var touch = Touchscreen.current;
+        var gamepad = Gamepad.current;
+
+        if (mouse.leftButton.wasPressedThisFrame)
 		{
 			Shoot();
 		}
