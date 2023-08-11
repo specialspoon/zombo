@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,20 +8,25 @@ public class Enemy : MonoBehaviour
     public Transform player;
     public Rigidbody2D rb;
     public Animator animator;
-    
 
-    void Update()
+    void Start()
+    {
+        animator.SetTrigger("idle");
+    }
+
+    public void Update()
     {
         if (health <= 0f)
         {
             Destroy(gameObject);
         }
 
+        animate();
 
-        //Vector2 lookDir = player.position - transform.position;
-        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        //rb.MoveRotation(angle);
+        // 0 - 45 : 45-90 : 90 - 135 : 135 - 180 : 180 - 225 : 225 - 270 : 270 - 360 
+
     }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -38,4 +41,20 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
     }
+
+    public void animate()
+    {
+        Vector2 lookDir = player.position - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+
+        if (angle < 0 && angle > -180)
+        {
+            animator.SetTrigger("right");
+        }
+        else
+        {
+            animator.SetTrigger("left");
+        }
+    }
+
 }
