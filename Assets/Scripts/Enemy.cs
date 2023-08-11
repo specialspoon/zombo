@@ -11,10 +11,6 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     
-    void Start()
-    {
-        //animator = getComponent<Animator>();
-    }
 
     void Update()
     {
