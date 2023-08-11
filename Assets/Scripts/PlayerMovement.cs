@@ -24,25 +24,28 @@ public class PlayerMovement : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        Debug.Log(movement);
         if (movement.x > 0)
         {
-            animator.SetTrigger("right");
+            animator.Play("player_walk_right");
+            //animator.SetTrigger("right");
             //Debug.Log("right");
         }
         if (movement.x < 0)
         {
-            animator.SetTrigger("left");
+            animator.Play("player_walk_left");
+            //animator.SetTrigger("left");
             //Debug.Log("left");
         }
         if (movement.y < 0)
         {
-            animator.SetTrigger("down");
+            animator.Play("player_walk_down");
+            //animator.SetTrigger("down");
             //Debug.Log("down");
         }
         if (movement.y > 0)
         {
-            animator.SetTrigger("up");
+            animator.Play("player_walk_up");
+            //animator.SetTrigger("up");
             //Debug.Log("up");
         }
     }
