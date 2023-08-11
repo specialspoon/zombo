@@ -20,10 +20,10 @@ public class PlayerShooting : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-        //var keys = Keyboard.current;
+        var keys = Keyboard.current;
         var mouse = Mouse.current;
-        //var touch = Touchscreen.current;
-        //var gamepad = Gamepad.current;
+        var touch = Touchscreen.current;
+        var gamepad = Gamepad.current;
 
         if (mouse.leftButton.wasPressedThisFrame)
 		{
