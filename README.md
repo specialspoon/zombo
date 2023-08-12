@@ -1,10 +1,13 @@
 # zombo
+
+**About:**
+
 zombo is a 2d top-down zombie apocalypse shooter. Its still _**really**_ heavily under development, but its _kinda fun...?_
 We would also appreciate your feedback on our game. If you find any bugs, please consider reporting them to us. Thank you for your support.
 
 
 
-Team:
+**Team:**
 
 Cooki-Studios: Art, art, and art.
 
