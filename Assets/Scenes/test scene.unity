@@ -1935,8 +1935,8 @@ MonoBehaviour:
   damage: 10
   fireSpeed: 5
   range: 5
-  player: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  player: {fileID: 1655148478}
+  bulletPrefab: {fileID: 456813857}
   firePoint: {fileID: 1944168656337368042}
   rb: {fileID: 7797566492563295353}
   playerLayer:
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae49387b59ffee643a7598de336640ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1655148478}
   isStopped: 0
 --- !u!1 &6530132715894350519
 GameObject:

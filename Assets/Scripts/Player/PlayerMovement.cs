@@ -17,13 +17,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var keys = Keyboard.current;
-        var mouse = Mouse.current;
-        var touch = Touchscreen.current;
-        var gamepad = Gamepad.current;
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
         if (movement.x > 0)
         {
             animator.Play("player_walk_right");
