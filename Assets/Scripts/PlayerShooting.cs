@@ -14,18 +14,29 @@ public class PlayerShooting : MonoBehaviour
 
 	public float bulletForce = 20f;
 	public float fireRate = 0.5f;
+	public int magazineSize;
+	public float reloadSpeed;
 
 	public bool canShoot = true;
+	public bool needsToReload = false;
+	public bool isReloading = false;
 
-	// Update is called once per frame
-	void Update()
+	public int bulletsLeft;
+
+
+    private void Start()
+    {
+		bulletsLeft = magazineSize;
+    }
+
+    // Update is called once per frame
+    void Update()
 	{
 
         if (Input.GetMouseButtonDown(0))
 		{
 			Shoot();
 		}
-
 
 		mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 		Vector2 lookDir = mousePos - rb.position;
@@ -35,7 +46,7 @@ public class PlayerShooting : MonoBehaviour
 
 	void Shoot()
 	{
-		if (canShoot == true)
+		if (canShoot == true && !(bulletsLeft <= 0) && isReloading == false)
         {
 			canShoot = false;
 			GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -44,12 +55,24 @@ public class PlayerShooting : MonoBehaviour
 			Destroy(bullet, 5f);
 			Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 			rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-			Invoke("Reload", fireRate);
+			Invoke("EndCooldown", fireRate);
+			bulletsLeft--;
 		}
+		else if (bulletsLeft <= 0 && isReloading == false)
+        {
+			isReloading = true;
+			Invoke("Reload", reloadSpeed);
+        }
 	}
+
+	void EndCooldown()
+    {
+		canShoot = true;
+    }
 
 	void Reload()
     {
-		canShoot = true;
+		bulletsLeft = magazineSize;
+		isReloading = false;
     }
 }
