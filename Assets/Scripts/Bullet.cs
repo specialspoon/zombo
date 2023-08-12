@@ -38,5 +38,25 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("enemy hit");
+            Enemy enemyScript;
+            enemyScript = collision.gameObject.GetComponent<Enemy>();
+            enemyScript.Damage(bulletDamage);
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("EnemyRanged"))
+        {
+            Debug.Log("enemy hit");
+            EnemyRanged enemyScript;
+            enemyScript = collision.gameObject.GetComponent<EnemyRanged>();
+            enemyScript.Damage(bulletDamage);
+            Destroy(gameObject);
+        }
+    }
+
 }
