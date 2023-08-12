@@ -23,8 +23,6 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] private bool canShoot;
     [SerializeField] private bool canSeePlayer;
 
-    Vector2 direction;
-
     // start function
     private void Start()
     {
@@ -44,7 +42,7 @@ public class EnemyRanged : MonoBehaviour
         lookDir = lookDir.normalized;
 
         // figure out if there is anything in the way of the line of sight
-        if (Physics2D.Raycast(firePoint.position, new Vector2(lookDir.x, lookDir.y), range, playerLayer) && !Physics2D.Raycast(firePoint.position, new Vector2(direction.x, direction.y), range, wallLayer))
+        if (Physics2D.Raycast(firePoint.position, new Vector2(lookDir.x, lookDir.y), range, playerLayer) && !Physics2D.Raycast(firePoint.position, new Vector2(lookDir.x, lookDir.y), range, wallLayer))
         {
             canSeePlayer = true;
             followTarget.isStopped = true;
@@ -70,7 +68,7 @@ public class EnemyRanged : MonoBehaviour
 
             Rigidbody2D rb;
             rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(new Vector2(direction.x * fireSpeed, direction.y * fireSpeed), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(lookDir.x * fireSpeed, lookDir.y * fireSpeed), ForceMode2D.Impulse);
 
             Invoke("Reload", 0.5f);
         }
