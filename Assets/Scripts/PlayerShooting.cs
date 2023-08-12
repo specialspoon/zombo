@@ -54,9 +54,15 @@ public class PlayerShooting : MonoBehaviour
 			bulletScript.bulletDamage = 10f;
 			Destroy(bullet, 5f);
 			Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+			CircleCollider2D collider = bullet.GetComponent<CircleCollider2D>();
 			rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
 			Invoke("EndCooldown", fireRate);
 			bulletsLeft--;
+
+			if(firePoint.GetComponent<TouchingEnemyCheck>().isTouchingEnemy == true)
+            {
+				collider.isTrigger = true;
+            }
 		}
 		else if (bulletsLeft <= 0 && isReloading == false)
         {
