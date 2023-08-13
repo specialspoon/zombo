@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 253171650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.117, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6248,6 +6248,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 456813857}
   cam: {fileID: 519420031}
   rb: {fileID: 1321325054}
+  muzzleFlash: {fileID: 253171653}
   bulletForce: 5
   fireRate: 0.2
   magazineSize: 10

@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
 	public GameObject bulletPrefab;
 	public Camera cam;
 	public Rigidbody2D rb;
+	public ParticleSystem muzzleFlash;
 
 	Vector2 mousePos;
 
@@ -51,6 +52,7 @@ public class PlayerShooting : MonoBehaviour
 		if (canShoot == true && !(bulletsLeft <= 0) && isReloading == false)
         {
 			canShoot = false;
+			muzzleFlash.Play();
 
 			for (int i = 0; i < bulletCount; i++)
             {
