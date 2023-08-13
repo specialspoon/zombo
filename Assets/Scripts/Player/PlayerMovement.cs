@@ -22,35 +22,26 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x > 0)
-        {
-            animator.Play("player_walk_right");
-            //animator.SetTrigger("right");
-            //Debug.Log("right");
-        }
-        if (movement.x < 0)
-        {
-            animator.Play("player_walk_left");
-            //animator.SetTrigger("left");
-            //Debug.Log("left");
-        }
-        //not moving
-        if (movement.x == 0)
-        {
-            var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 lookDir = mousePos - transform.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDir = mousePos - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
 
-            if (angle < -180)
-            {
-                animator.Play("player_look_left");
-                gunSprite.flipX = false;
-            }
-            else
-            {
-                animator.Play("player_look_right");
-                gunSprite.flipX = true;
-            }
+        Debug.Log(angle);
+        if (angle > -60 && angle < -120)
+        {
+            Debug.Log("right");
+        }
+        if (angle > -120 && angle < -240)
+        {
+            Debug.Log("down");
+        }
+        if (angle > -240 && angle < -300)
+        {
+            Debug.Log("left");
+        }
+        if (angle > -300)
+        {
+            Debug.Log("right");
         }
     }
 
