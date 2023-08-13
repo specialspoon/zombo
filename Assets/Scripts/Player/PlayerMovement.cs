@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public SpriteRenderer gunSprite;
 
+    public float gunRot;
+
     Vector2 movement;
 
     // Update is called once per frame
@@ -26,22 +28,22 @@ public class PlayerMovement : MonoBehaviour
         Vector2 lookDir = mousePos - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
 
+        gunRot = angle;
         Debug.Log(angle);
-        if (angle > -60 && angle < -120)
+        if (gunRot > -60 && gunRot < -120)
         {
-            Debug.Log("right");
+            animator.Play("player_walk_right");
         }
-        if (angle > -120 && angle < -240)
-        {
-            Debug.Log("down");
+        if (gunRot > -120 && gunRot < -240){
+            animator.Play("player_walk_down");
         }
-        if (angle > -240 && angle < -300)
+        if (gunRot > -240 && gunRot < -300)
         {
-            Debug.Log("left");
+            animator.Play("player_walk_left");
         }
-        if (angle > -300)
+        if (gunRot > -300)
         {
-            Debug.Log("right");
+            animator.Play("player_walk_up");
         }
     }
 
