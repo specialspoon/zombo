@@ -1586,6 +1586,7 @@ GameObject:
   - component: {fileID: 1655148475}
   - component: {fileID: 1655148480}
   - component: {fileID: 1655148481}
+  - component: {fileID: 1655148482}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1607,8 +1608,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSmoothing: 30
-  animator: {fileID: 0}
+  animator: {fileID: 1655148482}
   rb: {fileID: 1655148476}
+  cam: {fileID: 519420031}
 --- !u!50 &1655148476
 Rigidbody2D:
   serializedVersion: 4
@@ -1764,6 +1766,27 @@ MonoBehaviour:
   health: 100
   isDead: 0
   canTakeDamage: 1
+--- !u!95 &1655148482
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655148474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8ef4507c639c74f47880c0bf4b2d0780, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1736761405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &447321904750830888
 Transform:
   m_ObjectHideFlags: 0
@@ -2479,7 +2502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae49387b59ffee643a7598de336640ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1655148478}
   isStopped: 0
 --- !u!61 &1986277954459258356
 BoxCollider2D:
@@ -2894,8 +2917,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damage: 10
-  player: {fileID: 0}
+  damage: 20
+  player: {fileID: 1655148478}
   rb: {fileID: 8962257083571155910}
   animator: {fileID: 8623872869326364501}
 --- !u!114 &6934341446489596658
@@ -2911,8 +2934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _map: {fileID: 0}
-  maxSpeed: 2.5
-  mass: 2
+  maxSpeed: 2
+  mass: 3
   stoppingDistance: 1
   slowingDistance: 2
   accelerationRate: 2
@@ -3116,7 +3139,7 @@ Animator:
   m_GameObject: {fileID: 212387853420361550}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ac820555b7f78c4e96e9728f01b83fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 419bd1a284cd6484faee756bee2d69ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
