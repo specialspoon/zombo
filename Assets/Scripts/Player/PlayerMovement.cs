@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public Camera cam;
-    public SpriteRenderer gunSprite;
+    public Transform gunTransform;
 
     public float gunRot;
 
@@ -28,20 +28,21 @@ public class PlayerMovement : MonoBehaviour
         Vector2 lookDir = mousePos - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
 
-        gunRot = angle;
-        Debug.Log(angle);
-        if (gunRot > -60 && gunRot < -120)
+        gunRot = gunTransform.eulerAngles.z;
+        //gunRot = gunRot * -100;
+        Debug.Log(gunRot);
+        if (gunRot > 240 && gunRot < 315)
         {
             animator.Play("player_walk_right");
         }
-        if (gunRot > -120 && gunRot < -240){
+        if (gunRot > 120 && gunRot < 240){
             animator.Play("player_walk_down");
         }
-        if (gunRot > -240 && gunRot < -300)
+        if (gunRot > 30 && gunRot < 120)
         {
             animator.Play("player_walk_left");
         }
-        if (gunRot > -300)
+        if (gunRot > 315 || gunRot < 30)
         {
             animator.Play("player_walk_up");
         }
