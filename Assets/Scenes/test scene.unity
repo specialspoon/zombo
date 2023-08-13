@@ -1360,7 +1360,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 456813857}
   cam: {fileID: 519420031}
   rb: {fileID: 1321325054}
-  gunSprite: {fileID: 664674487}
+  gunSprite: {fileID: 0}
   bulletForce: 5
   fireRate: 0.2
   magazineSize: 10
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   animator: {fileID: 1655148482}
   rb: {fileID: 1655148476}
   cam: {fileID: 519420031}
-  gunSprite: {fileID: 664674487}
+  gunSprite: {fileID: 0}
 --- !u!50 &1655148476
 Rigidbody2D:
   serializedVersion: 4
