@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public Camera cam;
+    public SpriteRenderer gunSprite;
 
     Vector2 movement;
 
@@ -43,10 +44,12 @@ public class PlayerMovement : MonoBehaviour
             if (angle < -180)
             {
                 animator.Play("player_look_left");
+                gunSprite.flipX = false;
             }
             else
             {
                 animator.Play("player_look_right");
+                gunSprite.flipX = true;
             }
         }
     }

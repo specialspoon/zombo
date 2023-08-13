@@ -9,7 +9,8 @@ public class PlayerShooting : MonoBehaviour
 	public GameObject bulletPrefab;
 	public Camera cam;
 	public Rigidbody2D rb;
-
+	public SpriteRenderer gunSprite;
+	
 	Vector2 mousePos;
 
 	public float bulletForce = 20f;
