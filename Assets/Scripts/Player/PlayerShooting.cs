@@ -9,14 +9,15 @@ public class PlayerShooting : MonoBehaviour
 	public GameObject bulletPrefab;
 	public Camera cam;
 	public Rigidbody2D rb;
-	public SpriteRenderer gunSprite;
-	
+
 	Vector2 mousePos;
 
 	public float bulletForce = 20f;
 	public float fireRate = 0.5f;
 	public int magazineSize;
 	public float reloadSpeed;
+	public int bulletCount = 5;
+	public float spreadAngle = 15f;
 
 	public bool canShoot = true;
 	public bool needsToReload = false;
@@ -33,7 +34,6 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-
         if (Input.GetMouseButtonDown(0))
 		{
 			Shoot();
@@ -50,20 +50,30 @@ public class PlayerShooting : MonoBehaviour
 		if (canShoot == true && !(bulletsLeft <= 0) && isReloading == false)
         {
 			canShoot = false;
-			GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-			Bullet bulletScript = bullet.GetComponent<Bullet>();
-			bulletScript.bulletDamage = 10f;
-			Destroy(bullet, 5f);
-			Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-			CircleCollider2D collider = bullet.GetComponent<CircleCollider2D>();
-			rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-			Invoke("EndCooldown", fireRate);
-			bulletsLeft--;
 
-			if(firePoint.GetComponent<TouchingEnemyCheck>().isTouchingEnemy == true)
+			for (int i = 0; i < bulletCount; i++)
             {
-				collider.isTrigger = true;
-            }
+				float angle = spreadAngle * (i - (bulletCount - 1) / 2f);
+				Quaternion bulletRotation = Quaternion.Euler(0, 0, angle) * transform.rotation;
+
+				GameObject bullet = Instantiate(bulletPrefab, firePoint.position, bulletRotation);
+				Bullet bulletScript = bullet.GetComponent<Bullet>();
+
+				bulletScript.bulletDamage = 10f;
+				Destroy(bullet, 5f);
+				Transform bulletTransform = bullet.GetComponent<Transform>();
+				Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+				CircleCollider2D collider = bullet.GetComponent<CircleCollider2D>();
+				rb.AddForce(bulletTransform.up * bulletForce, ForceMode2D.Impulse);
+				Invoke("EndCooldown", fireRate);
+				bulletsLeft--;
+
+				if (firePoint.GetComponent<TouchingEnemyCheck>().isTouchingEnemy == true)
+				{
+					collider.isTrigger = true;
+				}
+			}
+
 		}
 		else if (bulletsLeft <= 0 && isReloading == false)
         {
