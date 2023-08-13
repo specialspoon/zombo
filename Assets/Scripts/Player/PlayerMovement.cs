@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
     public Rigidbody2D rb;
+    public Camera cam;
 
     Vector2 movement;
 
@@ -32,17 +33,21 @@ public class PlayerMovement : MonoBehaviour
             //animator.SetTrigger("left");
             //Debug.Log("left");
         }
-        if (movement.y < 0)
+        //not moving
+        if (movement.x == 0)
         {
-            animator.Play("player_walk_down");
-            //animator.SetTrigger("down");
-            //Debug.Log("down");
-        }
-        if (movement.y > 0)
-        {
-            animator.Play("player_walk_up");
-            //animator.SetTrigger("up");
-            //Debug.Log("up");
+            var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 lookDir = mousePos - transform.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+
+            if (angle < -180)
+            {
+                animator.Play("player_look_left");
+            }
+            else
+            {
+                animator.Play("player_look_right");
+            }
         }
     }
 
