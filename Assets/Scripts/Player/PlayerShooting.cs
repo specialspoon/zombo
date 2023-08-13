@@ -66,13 +66,14 @@ public class PlayerShooting : MonoBehaviour
 				CircleCollider2D collider = bullet.GetComponent<CircleCollider2D>();
 				rb.AddForce(bulletTransform.up * bulletForce, ForceMode2D.Impulse);
 				Invoke("EndCooldown", fireRate);
-				bulletsLeft--;
 
 				if (firePoint.GetComponent<TouchingEnemyCheck>().isTouchingEnemy == true)
 				{
 					collider.isTrigger = true;
 				}
 			}
+
+			bulletsLeft--;
 
 		}
 		else if (bulletsLeft <= 0 && isReloading == false)
