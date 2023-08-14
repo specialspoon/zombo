@@ -32,7 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
         gunRot = gunTransform.eulerAngles.z;
 
-        Debug.Log(movement.x != 0 || movement.y != 0);
+        if (movement.x == 0 && movement.y == 0)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
         Animate();
     }
 
