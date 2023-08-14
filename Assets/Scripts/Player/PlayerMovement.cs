@@ -34,18 +34,22 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.Play("player_walk_right");
             gunSprite.flipX = false;
+            gunSprite.sortingOrder = 1;
         }
         if (gunRot > 120 && gunRot < 240){
             animator.Play("player_walk_down");
+            gunSprite.sortingOrder = 1;
         }
         if (gunRot > 30 && gunRot < 120)
         {
             animator.Play("player_walk_left");
+            gunSprite.sortingOrder = 1;
             gunSprite.flipX = true;
         }
         if (gunRot > 315 || gunRot < 30)
         {
             animator.Play("player_walk_up");
+            gunSprite.sortingOrder = -1;
         }
     }
 
