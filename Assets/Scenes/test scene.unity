@@ -6892,12 +6892,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSmoothing: 30
-  animator: {fileID: 1655148482}
+  animator: {fileID: 0}
   rb: {fileID: 1655148476}
   cam: {fileID: 519420031}
   gunTransform: {fileID: 1321325052}
   gunSprite: {fileID: 664674487}
   gunRot: 0
+  isMoving: 0
 --- !u!50 &1655148476
 Rigidbody2D:
   serializedVersion: 4
@@ -6966,7 +6967,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -971495106, guid: 878f35c2aa2fe4685bab9b3c1aea8bd5, type: 3}
+  m_Sprite: {fileID: 1359008186, guid: 5525c1b249bd2447c96af94914cea2ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6987,7 +6988,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.54, y: 1.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1.528}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -7062,7 +7063,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655148474}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8ef4507c639c74f47880c0bf4b2d0780, type: 2}
   m_CullingMode: 0

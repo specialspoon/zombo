@@ -49,24 +49,24 @@ public class PlayerMovement : MonoBehaviour
         {
             if (gunRot > 240 && gunRot < 315)
             {
-                animator.Play("player_look_right");
+                //animator.Play("player_look_right");
                 gunSprite.flipX = false;
                 gunSprite.sortingOrder = 1;
             }
             if (gunRot > 120 && gunRot < 240)
             {
-                animator.Play("player_look_down");
+                //animator.Play("player_look_down");
                 gunSprite.sortingOrder = 1;
             }
             if (gunRot > 30 && gunRot < 120)
             {
-                animator.Play("player_look_left");
+                //animator.Play("player_look_left");
                 gunSprite.sortingOrder = 1;
                 gunSprite.flipX = true;
             }
             if (gunRot > 315 || gunRot < 30)
             {
-                animator.Play("player_look_up");
+                //animator.Play("player_look_up");
                 gunSprite.sortingOrder = -1;
             }
         }
