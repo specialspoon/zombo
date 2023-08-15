@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
 	public GameObject bulletPrefab;
 	public Camera cam;
 	public Rigidbody2D rb;
+	public ParticleSystem muzzleFlash;
 
 	Vector2 mousePos;
 
@@ -28,6 +29,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Start()
     {
+		canShoot = true;
 		bulletsLeft = magazineSize;
     }
 
@@ -43,6 +45,7 @@ public class PlayerShooting : MonoBehaviour
 		Vector2 lookDir = mousePos - rb.position;
 		float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
 		rb.MoveRotation(angle);
+		
 	}
 
 	void Shoot()
@@ -50,6 +53,7 @@ public class PlayerShooting : MonoBehaviour
 		if (canShoot == true && !(bulletsLeft <= 0) && isReloading == false)
         {
 			canShoot = false;
+			muzzleFlash.Play();
 
 			for (int i = 0; i < bulletCount; i++)
             {
