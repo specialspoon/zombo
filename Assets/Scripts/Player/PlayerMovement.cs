@@ -17,6 +17,13 @@ public class PlayerMovement : MonoBehaviour
     public float gunRot;
     public bool isMoving;
 
+    public Sprite up;
+    public Sprite right;
+    public Sprite down;
+    public Sprite left;
+    public Sprite downRight;
+    public Sprite downLeft;
+
     Vector2 movement;
 
     // Update is called once per frame
@@ -52,11 +59,13 @@ public class PlayerMovement : MonoBehaviour
 
     void animate()
     {
+        SpriteRenderer playerSprte = GetComponent<SpriteRenderer>();
+        Debug.Log(gunRot);
         if (!isMoving)
         {
             if (gunRot > 170 && gunRot < 190)
             {
-                Debug.Log("down");
+                
             }
             if (gunRot > 190 && gunRot < 205)
             {
