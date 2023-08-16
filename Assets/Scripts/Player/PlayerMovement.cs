@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Sprite right;
     public Sprite down;
     public Sprite left;
+    public Sprite downRightLittle;
     public Sprite downRight;
 
     Vector2 movement;
@@ -67,12 +68,17 @@ public class PlayerMovement : MonoBehaviour
                 playerSprte.sprite = down;
                 playerSprte.flipX = false;
             }
-            if (gunRot > 190 && gunRot < 225)
+            if (gunRot > 190 && gunRot < 205)
             {
-                Debug.Log("down-and-to-the-right-lil-bit");
+                playerSprte.sprite = downRightLittle;
+                playerSprte.flipX = false;
+            }
+            if (gunRot > 205 && gunRot < 225)
+            {
                 playerSprte.sprite = downRight;
                 playerSprte.flipX = false;
             }
+
             if (gunRot > 225 && gunRot < 315)
             {
                 Debug.Log("right");
@@ -91,10 +97,14 @@ public class PlayerMovement : MonoBehaviour
                 playerSprte.sprite = right;
                 playerSprte.flipX = true;
             }
-            if (gunRot > 135 && gunRot < 170)
+            if (gunRot > 135 && gunRot < 155)
             {
-                Debug.Log("down-and-to-the-left-lil-bit");
                 playerSprte.sprite = downRight;
+                playerSprte.flipX = true;
+            }
+            if (gunRot > 155 && gunRot < 170)
+            {
+                playerSprte.sprite = downRightLittle;
                 playerSprte.flipX = true;
             }
         }
