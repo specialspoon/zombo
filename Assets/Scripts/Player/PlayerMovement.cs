@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     public Transform gunTransform;
+    public SpriteRenderer gunSprite;
 
     public float gunRot;
     public bool isMoving;
@@ -66,36 +67,44 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("down");
                 playerSprte.sprite = down;
                 playerSprte.flipX = false;
+                gunSprite.sortingOrder = 1;
             }
             if (gunRot > 190 && gunRot < 225)
             {
                 Debug.Log("down-and-to-the-right-lil-bit");
                 playerSprte.sprite = downRight;
                 playerSprte.flipX = false;
+                gunSprite.sortingOrder = 1;
+                gunSprite.flipX = false;
             }
             if (gunRot > 225 && gunRot < 315)
             {
                 Debug.Log("right");
                 playerSprte.sprite = right;
                 playerSprte.flipX = false;
+                gunSprite.sortingOrder = 1;
             }
             if ((gunRot > 315 && gunRot < 360) || (gunRot > 0 && gunRot < 45))
             {
                 Debug.Log("up");
                 playerSprte.sprite = up;
                 playerSprte.flipX = false;
+                gunSprite.sortingOrder = -1;
             }
             if (gunRot > 45 && gunRot < 135)
             {
                 Debug.Log("left");
                 playerSprte.sprite = right;
                 playerSprte.flipX = true;
+                gunSprite.sortingOrder = 1;
             }
             if (gunRot > 135 && gunRot < 170)
             {
                 Debug.Log("down-and-to-the-left-lil-bit");
                 playerSprte.sprite = downRight;
                 playerSprte.flipX = true;
+                gunSprite.sortingOrder = 1;
+                gunSprite.flipX = true;
             }
         }
         if (isMoving)

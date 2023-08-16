@@ -6503,6 +6503,7 @@ MonoBehaviour:
   rb: {fileID: 1655148476}
   cam: {fileID: 519420031}
   gunTransform: {fileID: 1321325052}
+  gunSprite: {fileID: 664674487}
   gunRot: 0
   isMoving: 0
   up: {fileID: 21300000, guid: 587bae7a6080a4626b5fd248a5abb0aa, type: 3}
