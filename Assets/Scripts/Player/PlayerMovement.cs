@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     public Sprite down;
     public Sprite left;
     public Sprite downRight;
-    public Sprite downLeft;
 
     Vector2 movement;
 
@@ -60,40 +59,43 @@ public class PlayerMovement : MonoBehaviour
     void animate()
     {
         SpriteRenderer playerSprte = GetComponent<SpriteRenderer>();
-        Debug.Log(gunRot);
         if (!isMoving)
         {
             if (gunRot > 170 && gunRot < 190)
             {
-                
+                Debug.Log("down");
+                playerSprte.sprite = down;
+                playerSprte.flipX = false;
             }
-            if (gunRot > 190 && gunRot < 205)
-            {
-                Debug.Log("down-and-to-the-right-a-teeny-tiny-lil-bit");
-            }
-            if (gunRot > 205 && gunRot < 225)
+            if (gunRot > 190 && gunRot < 225)
             {
                 Debug.Log("down-and-to-the-right-lil-bit");
+                playerSprte.sprite = downRight;
+                playerSprte.flipX = false;
             }
             if (gunRot > 225 && gunRot < 315)
             {
                 Debug.Log("right");
+                playerSprte.sprite = right;
+                playerSprte.flipX = false;
             }
             if ((gunRot > 315 && gunRot < 360) || (gunRot > 0 && gunRot < 45))
             {
                 Debug.Log("up");
+                playerSprte.sprite = up;
+                playerSprte.flipX = false;
             }
             if (gunRot > 45 && gunRot < 135)
             {
                 Debug.Log("left");
+                playerSprte.sprite = right;
+                playerSprte.flipX = true;
             }
-            if (gunRot > 135 && gunRot < 155)
+            if (gunRot > 135 && gunRot < 170)
             {
                 Debug.Log("down-and-to-the-left-lil-bit");
-            }
-            if (gunRot > 155 && gunRot < 170)
-            {
-                Debug.Log("down-and-to-the-left-a-teeny-tiny-lil-bit");
+                playerSprte.sprite = downRight;
+                playerSprte.flipX = true;
             }
         }
         if (isMoving)
