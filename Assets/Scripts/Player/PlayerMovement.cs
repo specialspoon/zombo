@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
 
         gunRot = gunTransform.eulerAngles.z;
+
         if (movement.x == 0 && movement.y == 0)
         {
             isMoving = false;
@@ -38,7 +39,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = true;
         }
+
         animate();
+        //Debug.Log(gunRot);
     }
 
     private void FixedUpdate()
@@ -51,28 +54,44 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isMoving)
         {
-            if (gunRot > 240 && gunRot < 315)
+            if (gunRot > 170 && gunRot < 190)
             {
-                animator.Play("player_look_right");
+                Debug.Log("down");
             }
-            if (gunRot > 120 && gunRot < 240)
+            if (gunRot > 190 && gunRot < 205)
             {
-                animator.Play("player_look_down");
+                Debug.Log("down-and-to-the-right-a-teeny-tiny-lil-bit");
             }
-            if (gunRot > 30 && gunRot < 120)
+            if (gunRot > 205 && gunRot < 225)
             {
-                animator.Play("player_look_left");
+                Debug.Log("down-and-to-the-right-lil-bit");
             }
-            if (gunRot > 315 || gunRot < 30)
+            if (gunRot > 225 && gunRot < 315)
             {
-                animator.Play("player_look_up");
+                Debug.Log("right");
+            }
+            if ((gunRot > 315 && gunRot < 360) || (gunRot > 0 && gunRot < 45))
+            {
+                Debug.Log("up");
+            }
+            if (gunRot > 45 && gunRot < 135)
+            {
+                Debug.Log("left");
+            }
+            if (gunRot > 135 && gunRot < 155)
+            {
+                Debug.Log("down-and-to-the-left-lil-bit");
+            }
+            if (gunRot > 155 && gunRot < 170)
+            {
+                Debug.Log("down-and-to-the-left-a-teeny-tiny-lil-bit");
             }
         }
         if (isMoving)
         {
             if (gunRot > 240 && gunRot < 315)
             {
-                animator.Play("player_walk_right");
+
             }
             if (gunRot > 120 && gunRot < 240)
             {
