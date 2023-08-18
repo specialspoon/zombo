@@ -13,11 +13,11 @@ public class PlayerAnimations : MonoBehaviour
     public float gunRot;
     public bool isMoving;
 
-    public Sprite up;
-    public Sprite right;
-    public Sprite downs;
-    public Sprite downRightLittle;
-    public Sprite downRight;
+
+    private void Start()
+    {
+        SpriteRenderer playerSprite = GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
@@ -33,70 +33,48 @@ public class PlayerAnimations : MonoBehaviour
             isMoving = true;
         }
 
-        SpriteRenderer playerSprite = GetComponent<SpriteRenderer>();
-
-        if(gunRot >= 180)
-        {
-            gunSprite.flipX = false;
-        }
-
-        if (gunRot < 180)
-        {
-            gunSprite.flipX = true;
-        }
-
         if (!isMoving)
         {
-            animator.StopPlayback();
             if (gunRot > 170 && gunRot < 190)
             {
-                Debug.Log("down not moving");
-                playerSprite.sprite = downs;
-                playerSprite.flipX = false;
+                animator.Play("player_look_down");
                 gunSprite.sortingOrder = 1;
             }
             if (gunRot > 190 && gunRot < 205)
             {
-                playerSprite.sprite = downRightLittle;
-                playerSprite.flipX = false;
+                animator.Play("player_look_down_right_more");
             }
             if (gunRot > 205 && gunRot < 225)
             {
-                playerSprite.sprite = downRight;
-                playerSprite.flipX = false;
+                animator.Play("player_look_down_right");
                 gunSprite.sortingOrder = 1;
                 gunSprite.flipX = false;
             }
 
             if (gunRot > 225 && gunRot < 315)
             {
-                playerSprite.sprite = right;
-                playerSprite.flipX = false;
+                animator.Play("player_look_right");
                 gunSprite.sortingOrder = 1;
             }
             if ((gunRot > 315 && gunRot < 360) || (gunRot > 0 && gunRot < 45))
             {
-                playerSprite.sprite = up;
-                playerSprite.flipX = false;
+                animator.Play("player_look_up");
                 gunSprite.sortingOrder = 0;
             }
             if (gunRot > 45 && gunRot < 135)
             {
-                playerSprite.sprite = right;
-                playerSprite.flipX = true;
+                animator.Play("player_look_left");
                 gunSprite.sortingOrder = 1;
             }
             if (gunRot > 135 && gunRot < 155)
             {
-                playerSprite.sprite = downRight;
-                playerSprite.flipX = true;
+                animator.Play("player_look_down_left");
                 gunSprite.sortingOrder = 1;
                 gunSprite.flipX = true;
             }
             if (gunRot > 155 && gunRot < 170)
             {
-                playerSprite.sprite = downRightLittle;
-                playerSprite.flipX = true;
+                animator.Play("player_look_down_left_more");
             }
         }
         if (isMoving)
@@ -108,17 +86,20 @@ public class PlayerAnimations : MonoBehaviour
             }
             if (gunRot > 190 && gunRot < 205)
             {
-                animator.Play("player_walk_down_right");
-                gunSprite.sortingOrder = 1;
+                animator.Play("player_walk_down_right_more");
             }
             if (gunRot > 205 && gunRot < 225)
             {
-                animator.Play("player_down_right_more");
+                animator.Play("player_walk_down_right");
+     
                 gunSprite.sortingOrder = 1;
+                gunSprite.flipX = false;
             }
+
             if (gunRot > 225 && gunRot < 315)
             {
                 animator.Play("player_walk_right");
+   
                 gunSprite.sortingOrder = 1;
             }
             if ((gunRot > 315 && gunRot < 360) || (gunRot > 0 && gunRot < 45))
@@ -133,13 +114,13 @@ public class PlayerAnimations : MonoBehaviour
             }
             if (gunRot > 135 && gunRot < 155)
             {
-                animator.Play("player_walk_down_left_more");
+                animator.Play("player_walk_down_right");
                 gunSprite.sortingOrder = 1;
+                gunSprite.flipX = true;
             }
             if (gunRot > 155 && gunRot < 170)
             {
-                animator.Play("player_walk_down_left");
-                gunSprite.sortingOrder = 1;
+                animator.Play("player_walk_down_left_more");
             }
         }
     }
