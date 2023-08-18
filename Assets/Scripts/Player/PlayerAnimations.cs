@@ -42,13 +42,13 @@ public class PlayerAnimations : MonoBehaviour
             }
             if (gunRot > 190 && gunRot < 205)
             {
-                animator.Play("player_look_down_right_more");
+                animator.Play("player_look_down_right");
+                gunSprite.sortingOrder = 1;
             }
             if (gunRot > 205 && gunRot < 225)
             {
-                animator.Play("player_look_down_right");
+                animator.Play("player_look_down_right_more");
                 gunSprite.sortingOrder = 1;
-                gunSprite.flipX = false;
             }
 
             if (gunRot > 225 && gunRot < 315)
@@ -59,7 +59,7 @@ public class PlayerAnimations : MonoBehaviour
             if ((gunRot > 315 && gunRot < 360) || (gunRot > 0 && gunRot < 45))
             {
                 animator.Play("player_look_up");
-                gunSprite.sortingOrder = 0;
+                gunSprite.sortingOrder = -1;
             }
             if (gunRot > 45 && gunRot < 135)
             {
@@ -68,13 +68,13 @@ public class PlayerAnimations : MonoBehaviour
             }
             if (gunRot > 135 && gunRot < 155)
             {
-                animator.Play("player_look_down_left");
+                animator.Play("player_look_down_left_more");
                 gunSprite.sortingOrder = 1;
-                gunSprite.flipX = true;
             }
             if (gunRot > 155 && gunRot < 170)
             {
-                animator.Play("player_look_down_left_more");
+                animator.Play("player_look_down_left");
+                gunSprite.sortingOrder = 1;
             }
         }
         if (isMoving)
@@ -86,26 +86,24 @@ public class PlayerAnimations : MonoBehaviour
             }
             if (gunRot > 190 && gunRot < 205)
             {
-                animator.Play("player_walk_down_right_more");
+                animator.Play("player_walk_down_right");
+                gunSprite.sortingOrder = 1;
             }
             if (gunRot > 205 && gunRot < 225)
             {
-                animator.Play("player_walk_down_right");
-     
+                animator.Play("player_walk_down_right_more");
                 gunSprite.sortingOrder = 1;
-                gunSprite.flipX = false;
             }
 
             if (gunRot > 225 && gunRot < 315)
             {
                 animator.Play("player_walk_right");
-   
                 gunSprite.sortingOrder = 1;
             }
             if ((gunRot > 315 && gunRot < 360) || (gunRot > 0 && gunRot < 45))
             {
                 animator.Play("player_walk_up");
-                gunSprite.sortingOrder = 0;
+                gunSprite.sortingOrder = -1;
             }
             if (gunRot > 45 && gunRot < 135)
             {
@@ -114,13 +112,13 @@ public class PlayerAnimations : MonoBehaviour
             }
             if (gunRot > 135 && gunRot < 155)
             {
-                animator.Play("player_walk_down_right");
+                animator.Play("player_walk_down_left_more");
                 gunSprite.sortingOrder = 1;
-                gunSprite.flipX = true;
             }
             if (gunRot > 155 && gunRot < 170)
             {
-                animator.Play("player_walk_down_left_more");
+                animator.Play("player_walk_down_left");
+                gunSprite.sortingOrder = 1;
             }
         }
     }
