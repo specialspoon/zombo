@@ -97,4 +97,10 @@ public class PlayerShooting : MonoBehaviour
 		bulletsLeft = magazineSize;
 		isReloading = false;
     }
+
+	public IEnumerator EndFireRatePowerup(float boost, float delay)
+    {
+		yield return new WaitForSeconds(delay);
+		shotsPerSec -= boost;
+    }
 }

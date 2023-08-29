@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedBoost: 10
+  powerupTime: 5
 --- !u!1 &253171650
 GameObject:
   m_ObjectHideFlags: 0
@@ -6630,6 +6631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRateBoost: 10
+  powerupTime: 5
 --- !u!61 &792273050
 BoxCollider2D:
   m_ObjectHideFlags: 0

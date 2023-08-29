@@ -26,4 +26,9 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * movement.magnitude * Time.fixedDeltaTime);
     }
 
+    public IEnumerator EndSpeedPowerup(float boost, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        moveSpeed -= boost;
+    }
 }
