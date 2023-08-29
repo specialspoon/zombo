@@ -14,7 +14,7 @@ public class PlayerShooting : MonoBehaviour
 	Vector2 mousePos;
 
 	public float bulletForce = 20f;
-	public float fireRate = 0.5f;
+	public float shotsPerSec = 2f;
 	public int magazineSize;
 	public float reloadSpeed;
 	public int bulletCount = 5;
@@ -69,7 +69,7 @@ public class PlayerShooting : MonoBehaviour
 				Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 				CircleCollider2D collider = bullet.GetComponent<CircleCollider2D>();
 				rb.AddForce(bulletTransform.up * bulletForce, ForceMode2D.Impulse);
-				Invoke("EndCooldown", fireRate);
+				Invoke("EndCooldown", (1 / shotsPerSec));
 
 				if (firePoint.GetComponent<TouchingEnemyCheck>().isTouchingEnemy == true)
 				{

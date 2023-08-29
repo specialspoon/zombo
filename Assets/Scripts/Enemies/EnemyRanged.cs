@@ -8,6 +8,7 @@ public class EnemyRanged : MonoBehaviour
     public float health = 50;
     public float damage = 10;
     public float fireSpeed;
+    public float shotsPerSec;
     public float range;
 
     // links to other components
@@ -70,7 +71,7 @@ public class EnemyRanged : MonoBehaviour
             rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(lookDir.x * fireSpeed, lookDir.y * fireSpeed), ForceMode2D.Impulse);
 
-            Invoke("Reload", 0.5f);
+            Invoke("Reload", (1 / shotsPerSec));
         }
     }
 

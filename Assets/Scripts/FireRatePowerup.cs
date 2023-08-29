@@ -12,7 +12,8 @@ public class FireRatePowerup : MonoBehaviour
         {
             PlayerShooting shootingScript;
             shootingScript = collision.gameObject.GetComponentInChildren<PlayerShooting>();
-            shootingScript.fireRate -= fireRateBoost;
+            shootingScript.shotsPerSec += fireRateBoost;
+            
             Destroy(gameObject);
         }
     }
