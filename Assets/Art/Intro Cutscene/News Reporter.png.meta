@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 591e19c1e4a3347efa043053c1a9b3ba
-      internalID: -138395184
+      spriteID: 1f7677ee4e9024feea0f26a943fee3b4
+      internalID: 578024219
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 758c9b12c9b664ad0b1ee639733be47b
-      internalID: 1532944456
+      spriteID: a4bf83cd448f64f689682dcb97ff8f3e
+      internalID: -821436377
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      News Reporter_0: -138395184
-      News Reporter_1: 1532944456
+      News Reporter_0: 578024219
+      News Reporter_1: -821436377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
