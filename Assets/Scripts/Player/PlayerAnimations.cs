@@ -35,12 +35,12 @@ public class PlayerAnimations : MonoBehaviour
 
         if (gunRot < 180)
         {
-            gunSprite.flipX = true;
+            gunSprite.flipY = true;
         }
 
         else
         {
-            gunSprite.flipX = false;
+            gunSprite.flipY = false;
         }
 
         if (!isMoving)
