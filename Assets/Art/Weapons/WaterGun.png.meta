@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapons_0
+      name: WaterGun_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d92def8e05b648089caf6a61c384711
-      internalID: -763863097
+      spriteID: 3ecc16bf42b044266b68679ff1660c21
+      internalID: -1618561374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapons_1
+      name: WaterGun_1
       rect:
         serializedVersion: 2
         x: 13
@@ -145,8 +145,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f9abdb228e5742f7ad17aa98b2ec949
-      internalID: 1192146450
+      spriteID: 30236c7bf554341e7a423aa08f31ac92
+      internalID: 1289438027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterGun_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 2
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8c1367b2a33415e9f92a7d063c94c0
+      internalID: 108219274
       vertices: []
       indices: 
       edges: []
@@ -162,8 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Weapons_0: -763863097
-      Weapons_1: 1192146450
+      WaterGun_0: -1618561374
+      WaterGun_1: 1289438027
+      WaterGun_2: 108219274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
