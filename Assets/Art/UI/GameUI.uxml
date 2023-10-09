@@ -1,8 +1,3 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Art/UI/GameUI.uss?fileID=7433441132597879392&amp;guid=ece4902ae1b4e4f6f97b65e4bc8c2664&amp;type=3#GameUI" />
-    <ui:VisualElement style="flex-grow: 1; align-items: auto;" />
-    <ui:VisualElement style="flex-grow: 1; align-items: auto; width: auto;" />
-    <ui:VisualElement style="flex-grow: 1; flex-direction: column; align-items: stretch; justify-content: flex-end; align-self: stretch; width: auto; -unity-text-align: middle-left; cursor: url(&apos;project://database/Assets/Art/UI/Cursor-Crosshair-Inverse.png?fileID=2800000&amp;guid=688f93b2d48164e2ea7cf142930c2de4&amp;type=3#Cursor-Crosshair-Inverse&apos;); height: auto;">
-        <ui:Button text="Button Element Yay" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton" class="button" style="-unity-text-align: middle-center; white-space: normal; text-overflow: clip; width: 20%; height: auto;" />
-    </ui:VisualElement>
 </ui:UXML>
