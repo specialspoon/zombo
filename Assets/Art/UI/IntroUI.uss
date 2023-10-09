@@ -1,0 +1,20 @@
+.button {
+    -unity-font: url('project://database/Assets/Art/UI/Cookis%20Pixels.ttf?fileID=12800000&guid=cdfbb12691f60ad44826611c6d3ef89a&type=3#Cookis Pixels');
+    -unity-font-definition: initial;
+    color: rgb(255, 255, 255);
+    background-image: url('project://database/Assets/Art/UI/UI-Thin.png?fileID=21300000&guid=9dfe8119cbb4349a5b209c91d0bb68da&type=3#UI-Thin');
+    -unity-slice-scale: 0.2px;
+    -unity-background-image-tint-color: rgb(159, 159, 159);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    cursor: initial;
+}
+
+.button:hover {
+    cursor: url('project://database/Assets/Art/UI/Cursor-Pointer-Inverse.png?fileID=2800000&guid=fb8fba18674cb4be2a48572243db59d0&type=3#Cursor-Pointer-Inverse');
+    transition-duration: 200ms;
+    scale: 1.1 1.1;
+}
