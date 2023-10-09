@@ -8,6 +8,8 @@
     border-right-color: rgba(255, 255, 255, 0);
     border-top-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0);
+    -unity-font: url('project://database/Assets/Art/UI/Cooki's%20Pixels.ttf?fileID=12800000&guid=cdfbb12691f60ad44826611c6d3ef89a&type=3#Cooki's Pixels');
+    -unity-font-definition: initial;
 }
 
 .button:hover {
@@ -20,5 +22,6 @@
     border-right-color: rgba(255, 255, 255, 0);
     border-top-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0);
-    scale: 2 2;
+    scale: 1.1 1.1;
+    rotate: -5deg;
 }
