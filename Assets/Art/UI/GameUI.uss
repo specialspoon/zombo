@@ -1,0 +1,24 @@
+.button {
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 0;
+    background-image: url('project://database/Assets/Art/UI/UI-Thin.png?fileID=21300000&guid=9dfe8119cbb4349a5b209c91d0bb68da&type=3#UI-Thin');
+    -unity-slice-scale: 0.2px;
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(255, 255, 255, 0);
+    border-right-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+}
+
+.button:hover {
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 0;
+    background-image: url('project://database/Assets/Art/UI/UI-Thin.png?fileID=21300000&guid=9dfe8119cbb4349a5b209c91d0bb68da&type=3#UI-Thin');
+    -unity-slice-scale: 0.2px;
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(255, 255, 255, 0);
+    border-right-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+    scale: 2 2;
+}
